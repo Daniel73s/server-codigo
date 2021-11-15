@@ -1,0 +1,12 @@
+const express = require('express');
+const router = express.Router();
+const { listaAnuncios, listaAnunciosporEstado, listarAnunciosByCodvet,listaAnuncioByCodanuncio, CambiarEstadoAnuncio, crearAnuncio, asignarAnuncioaVet, actualizarAnuncio} = require('../controllers/anuncios.controller');
+router.get('/listaranuncios',listaAnuncios);
+router.get('/listaranuncioporestado/:estado',listaAnunciosporEstado);
+router.get('/listaranunciobycodvet/:codvet',listarAnunciosByCodvet);
+router.get('/listaranunciobycodanuncio/:codanuncio',listaAnuncioByCodanuncio);
+router.put('/cambiarestado',CambiarEstadoAnuncio);
+router.post('/addanuncio',crearAnuncio);
+router.post('/addvetanuncio',asignarAnuncioaVet);
+router.put('/actualizaranuncio',actualizarAnuncio);
+module.exports = router;
